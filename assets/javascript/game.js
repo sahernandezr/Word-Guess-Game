@@ -17,7 +17,8 @@ var lettersUsedText = document.getElementById("letters-already-guessed");
 
 
 // var wordList = ["dragon", "elf", "kraken", "leprechaun", "mermaid", "phoenix", "sphinx", "troll", "unicorn", "yeti"]
-var wordList = ["mermaid", "fairy", "elf"];
+//var wordList = ["mermaid", "fairy", "elf"];
+var wordList = ["mermaid"];
 // Choose a random Word from the wordList
 var wordChosen = wordList[Math.floor(Math.random()* wordList.length)];
 console.log(wordChosen);
@@ -42,25 +43,29 @@ document.onkeyup = function(event) {
         //console.log(lettersUsed);
         lettersUsedText.textContent="Letters already chosen: " + lettersUsed.join(); //to show which letters have been selected
         
-        if (wordChosen.indexOf(letterSelected)==-1) {
+        if (wordChosen.indexOf(letterSelected)==-1) { //if the letter selected doesn't exist in the word to guess, lower tries left by one
             triesLeft--;
             triesLeftText.textContent="Tries left: " + triesLeft;
 
-            if (triesLeft==0) {
+            if (triesLeft==0) { //if tries go down to zero, you lose
                 alert("You lost!");
             }
         }
 
-        else if (wordChosen.indexOf(letterSelected)>-1) { //this is only working for the first appeareance of the letter, I need to make a loop? maybe? so it replaces all the times the letter matches
-           place=(wordChosen.indexOf(letterSelected));
-           //console.log(place);
-           wordHidden[place]=letterSelected;
-           //console.log(wordHidden[place]);
-           //alert("You picked a good letter!");
-           wordToGuess.textContent=wordHidden.join("");
-           
+        else if (wordChosen.indexOf(letterSelected)>-1) { //if the letter selected is part of the word to be guessed
+            //I need to compare each element of the array wordChosen to the selected letter
+            //if it is the same, replace it
+            for (j=0; j<wordChosen.length; j++) {
+                if (letterSelected==wordChosen[j]) {
+                    wordHidden[j]=letterSelected;
+                    wordToGuess.textContent=wordHidden.join("");
+                }
 
-        }
+            }
+    
+            
+ 
+         }
     }
 
 } //end of document onkeyup
