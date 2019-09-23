@@ -1,14 +1,64 @@
-h1, #hidden-word {
-    font-size: 36px;
+body {
+    background-color: aqua;
+    background: url(../images/forest-ajustado.jpg) fixed no-repeat;
+}
+
+.navbar {
+    height: 50px;
+    background-color: forestgreen !important;
+    line-height: 40px;
+    padding: auto 0;
+
+}
+.navbar-brand {
+    font-family: 'Sura', serif;
+    font-size: 26px;
+    line-height: 40px;
+    padding: 0 0;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+
+.container {
+    max-width:960px;
     text-align: center;
 }
 
-h2 {
-    font-size: 27px;
-    text-align: center;
+.row {
+    color: #ffffff;
 }
 
-p {
-    font-size: 18px;
-    text-align: center;
+.jumbotron {
+    background-color: transparent;
+    padding: 0 0;
+    border:15px 0 0 0;
+    color: black;
+    
 }
+
+.card {
+    background-color: rgba(1, 68, 33, 0.3);
+    border-color: transparent;
+    border: 10px 0 ;
+    /* border-top: 10px; */
+    padding: 0 0;
+    
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px; /* fixed height of the footer */
+    line-height: 30px; /* vertically center the text */
+    width: 100%;
+    background-color: forestgreen !important;
+    color: #ffffff !important;
+  }
+
+  footer {
+      text-align: center;
+  }

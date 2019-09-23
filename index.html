@@ -6,32 +6,108 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Sura:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
-    <h1>Mythical Creatures Word Guess Game</h1>
-</br></br>
-    <h2>Press any key to get started!</h2>
-</br></br>
+        <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="https://sahernandezr.github.io/Responsive-Portfolio/">Sandra Hernández</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sahernandezr.github.io/Responsive-Portfolio/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sahernandezr.github.io/Responsive-Portfolio/portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sahernandezr.github.io/Responsive-Portfolio/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" download>CV</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <p>The word you need to guess is:</p>
 
-    <p id="hidden-word"></p>     
-</br></br>
-    <p id="wins">Wins: </p> <!--Number of times user guessed the word correctly-->
 
-    <p id="tries-left">Number of guesses remaining: </p> <!--I am going to give the user six guesses-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 jumbotron jumbotron-fluid">
+                <h1 class="display-4">Mythical Creatures Word Guess Game</h1>
+                <p class="lead">Press a letter to get started!</p>
+                
+            </div>
+        </div>
 
-    <p id="letters-already-guessed">Letters already guessed: </p> <!--Letters the user has guessed (or chosen even if the letters don't match? that makes more sense to me)-->
+        <div class="row">
+            <div class="col-sm-12 card">
+                <div class="card-header">
+                    The word you need to guess is:
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="hidden-word"></h5>         
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        WINS: 
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title" id="wins"></p> <!--Number of times user guessed the word correctly-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        LETTERS ALREADY USED:  
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title" id="letters-already-guessed"></p> <!--Letters the user has already chosen even if the letters don't match-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        WRONG TRIES LEFT:  
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title" id="tries-left"></p> <!--I am going to give the user six guesses-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--After the user wins/loses the game should automatically choose another word and make the user play it. 
-        
-        BONUS: when the user wins, display a sound or song.-->
+                
+    BONUS: when the user wins, display a sound or song.-->
 
-    <script src="assets/javascript/game.js">
-    
-    
-    </script>
+    <footer class="footer">
+            <div class="container">
+              <span class="text"><small>Copyright &#9400;</small></span>
+            </div>
+    </footer>
+
+                  <!-- Bootstrap Javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
     
 </body>
 </html>

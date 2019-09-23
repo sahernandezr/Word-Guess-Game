@@ -14,9 +14,10 @@ var winsText = document.getElementById("wins");
 var triesLeftText = document.getElementById("tries-left");
 var lettersUsedText = document.getElementById("letters-already-guessed");
 
-// var wordList = ["dragon", "elf", "kraken", "leprechaun", "mermaid", "phoenix", "sphinx", "troll", "unicorn", "yeti"]
-var wordList = ["mermaid", "fairy", "elf"];
+var wordList = ["dragon", "elf", "kraken", "leprechaun", "mermaid", "phoenix", "sphinx", "troll", "unicorn", "yeti"]
+//var wordList = ["mermaid", "fairy", "elf"];
 // Choose a random Word from the wordList
+
 var wordChosen = wordList[Math.floor(Math.random()* wordList.length)];
 console.log(wordChosen);
 
@@ -29,14 +30,14 @@ for (var i=0; i<wordChosen.length; i++) {
 //catch the user's keytroke
 
 document.onkeyup = function(event) {
-    var letterSelected = event.key;
+    var letterSelected = event.key.toLowerCase();
     //console.log(letterSelected);
 
         
    if ((available.indexOf(letterSelected)>-1) && lettersUsed.indexOf(letterSelected)==-1) { //if the user selection IS a letter and it hasn't been chosen by the user previously (to avoid showing repeated letters)
         lettersUsed.push(letterSelected); //add it to the array of lettersUsed
         //console.log(lettersUsed);
-        lettersUsedText.textContent="Letters already chosen: " + lettersUsed.join(); //to show which letters have been selected
+        lettersUsedText.textContent=lettersUsed.join(); //to show which letters have been selected
         
         
         if (wordChosen.indexOf(letterSelected)==-1) { //if the letter selected doesn't exist in the word to guess, lower tries left by one
@@ -68,8 +69,8 @@ document.onkeyup = function(event) {
 
             if (wordHiddenString===wordChosenString) {
                 wins++;
-                winsText.textContent="Wins: "+ wins;
-                alert("Great job! The correct word was '" + wordChosen + "'. Do you want to play again?");
+                winsText.textContent=wins;
+                alert('Great job! The correct word was "' + wordChosen.toUpperCase() + '"! Do you want to play again?');
             }
         }
     }
@@ -78,5 +79,5 @@ document.onkeyup = function(event) {
 
 // this is what is being shown in the DOM
 wordToGuess.textContent=wordHidden.join("");
-winsText.textContent="Wins: "+ wins;
-triesLeftText.textContent="Tries left: " + triesLeft;
+winsText.textContent=wins;
+triesLeftText.textContent=triesLeft;
