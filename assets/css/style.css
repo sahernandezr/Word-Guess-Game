@@ -25,6 +25,8 @@ body {
 .container {
     max-width:960px;
     text-align: center;
+    border-top: 15px;
+    padding-top: 20px;
 }
 
 .row {
@@ -35,7 +37,8 @@ body {
     background-color: transparent;
     padding: 0 0;
     border:15px 0 0 0;
-    color: black;
+    color: forestgreen;
+    font-family: 'Princess Sofia', cursive;
     
 }
 
@@ -45,6 +48,7 @@ body {
     border: 10px 0 ;
     /* border-top: 10px; */
     padding: 0 0;
+    font-family: 'Comfortaa', cursive;
     
 }
 

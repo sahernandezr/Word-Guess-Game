@@ -1,9 +1,11 @@
+//---VARIABLES---
 //Create variables to store wins, tries and letters used
-
 var wordToGuess = ""; 
 var wins = 0;
 var triesLeft = 6; //User has six chances to miss: head, torso, two arms, two legs
 var lettersUsed = [];
+var startGame = false;
+var wordHidden = [];
 
 //Array of options available to chose by the user (user can only chose letters, not numbers or signs)
 var available = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -13,9 +15,9 @@ var wordToGuess = document.getElementById("hidden-word");
 var winsText = document.getElementById("wins");
 var triesLeftText = document.getElementById("tries-left");
 var lettersUsedText = document.getElementById("letters-already-guessed");
-
 var wordList = ["dragon", "elf", "kraken", "leprechaun", "mermaid", "phoenix", "sphinx", "troll", "unicorn", "yeti"]
-//var wordList = ["mermaid", "fairy", "elf"];
+
+
 // Choose a random Word from the wordList
 
 var wordChosen = wordList[Math.floor(Math.random()* wordList.length)];
@@ -25,8 +27,10 @@ console.log(wordChosen);
     var wordHidden=[];
 for (var i=0; i<wordChosen.length; i++) {
     wordHidden[i]="-";
+    
 }
 
+//}
 //catch the user's keytroke
 
 document.onkeyup = function(event) {
@@ -62,10 +66,10 @@ document.onkeyup = function(event) {
             }
 
             var wordHiddenString = wordHidden.join("");
-            console.log(wordHiddenString);
+            //console.log(wordHiddenString);
 
             var wordChosenString = wordChosen.toString();
-            console.log(wordChosenString);
+            // console.log(wordChosenString);
 
             if (wordHiddenString===wordChosenString) {
                 wins++;
@@ -76,6 +80,7 @@ document.onkeyup = function(event) {
     }
 
 } //end of document onkeyup
+
 
 // this is what is being shown in the DOM
 wordToGuess.textContent=wordHidden.join("");
